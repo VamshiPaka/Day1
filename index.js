@@ -1,12 +1,21 @@
 /** Function to count no of occurences of words in a paragraph or a sentence */
 
-let countWords = (str, word) => str.split(word).length-1;
-
+let countWords = (str, word1, word2) => {
+  if (str.split(word1).length - 1 > str.split(word2).length - 1) {
+    return word1;
+  } else {
+    return word2;
+  }
+};
 let paragraph =
   "This paragraph contains some unrelated data created just for the sake of counting the occurrences of the words in this paragraph so will add some random strings now for for created paragraph paragraph";
 
-console.log(countWords(paragraph, "for"));
+console.log(countWords(paragraph, "for", "this"));
 
 /**Function which takes raw text as a parameter and returns clean text*/
 
+let cleanText = (str) => str.replace(/[^a-zA-Z ]/g, "");
 
+let paragraph2 = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`;
+
+console.log(cleanText(paragraph2));
